@@ -199,11 +199,11 @@ def plot_2_gaits(
     # --- Plot CoM trajectory, distinguishing SS vs DS ---
 
     for seg in plan.segments:
-        linestyle = "-"    # could switch on seg.phase if you want
+        linestyle = "--"    # could switch on seg.phase if you want
         linewidth = 2.0
         label = None
         if seg.step_index == 0:
-            label = f"CoM {seg.phase}"
+            label = f"CoM Reference Trajectory"
 
         ax.plot(
             seg.x,
@@ -220,7 +220,7 @@ def plot_2_gaits(
     if extra_segments is not None:
         extra_label_done = False
         for seg in extra_segments:
-            linestyle = "--"
+            linestyle = "-"
             linewidth = 1.8
             label = None
             if not extra_label_done and seg.step_index == 0:
