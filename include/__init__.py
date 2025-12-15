@@ -10,12 +10,13 @@ from .primitives import (
     finite_diff_first,
 )
 from .disturbance_foos import(
-    rand_dist,
+    norm_dist,
     const_x_dist,
     const_y_dist,
     unif_dist,
     unif_x_dist,
     unif_y_dist,
+    rand_imp,
 )
 
 __all__ = [
@@ -33,10 +34,11 @@ __all__ = [
     "solve_dare",
     "finite_diff_first",
     "compute_virtual_inp_lim",
-    "rand_dist",
+    "norm_dist",
     "const_x_dist",
     "const_y_dist",
     "unif_dist",
     "unif_x_dist",
     "unif_y_dist",
+    "rand_imp"
 ]

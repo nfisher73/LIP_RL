@@ -8,7 +8,7 @@ from include.gait_classes import GaitPlan, CoMSegment, Footstep
 from include.dynamics import compute_virtual_inp_lim 
 
 
-def straight_walk(params: LIPParams, cl: bool = True, dist_fn = None):
+def straight_walk(params: LIPParams, cl: bool = True, dist_fn = None, scale = None):
     
     Q = params.Q
     R = params.R
@@ -70,7 +70,10 @@ def straight_walk(params: LIPParams, cl: bool = True, dist_fn = None):
                 u = np.zeros(2)
 
             if dist_fn is not None:
-                u += dist_fn()
+                if scale is not None:
+                    u += dist_fn(scale = scale)
+                else:
+                    u += dist_fn()
 
             s_rel_next = A_d @ s_rel + B_d @ u
             x_rel, xdot, y_rel, ydot = s_rel_next

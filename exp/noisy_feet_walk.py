@@ -27,13 +27,14 @@ params = create_default_lip_params()
 
 # if fell: 
 #     visualize_gait_open3d(cl_walk, params, swing_height=0.1, frame_interval=0.01)
-fall_steps = []
-for i in range(1000):
-    cl_walk, fell, fall_time, fall_step = straight_walk_with_foot_errors(params, dist_fn = None, foot_noise_std=0.014, prnt= False, cl = True)
-    fall_steps.append(fall_step)
-    print(cl_walk)
-    break
-print(np.mean(fall_steps))
+#fall_steps = []
+#for i in range(1000):
+cl_walk, fell, fall_time, fall_step = straight_walk_with_foot_errors(params, dist_fn = None, foot_noise_std=0.014, prnt= False, cl = True)
+visualize_gait_open3d(cl_walk, params, swing_height=0.1, frame_interval=0.02)
+#     fall_steps.append(fall_step)
+#     print(cl_walk)
+#     break
+# print(np.mean(fall_steps))
 # plot_gait_vel_2d(cl_walk)
 #visualize_gait_open3d(cl_walk, params, swing_height=0.1, frame_interval=0.02)
 
