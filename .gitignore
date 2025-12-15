@@ -2,3 +2,4 @@
 exp/ppo_foot_residual/*
 **/__pycache__
 .DS_Store
+!exp/ppo_foot_residual/seed_015/*
