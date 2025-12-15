@@ -9,7 +9,7 @@ from include.dynamics import compute_virtual_inp_lim
 
 
 def straight_walk(params: LIPParams, cl: bool = True, dist_fn = None):
-
+    
     Q = params.Q
     R = params.R
 
